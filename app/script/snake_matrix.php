@@ -54,7 +54,7 @@ for ($i = 1; $i <= $circle_num; $i++) {//一圈一圈的来
     }
 
 }
-die;
+
 foreach ($matrix_arr as $key => $val) {
     ksort($val);
     $str = "";
