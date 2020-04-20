@@ -17,22 +17,16 @@ $input_num = $param['n'];
 $value = 1; //矩阵的值
 $matrix_arr = [];
 $circle_num = ceil($input_num / 2);  //根据观察总结，转的圈数为行数除以2，如果行数为奇数，则向上取整，即+1
-for ($i = 1; $i <= $circle_num; $i++) {//一圈一圈的来
+for ($i = 0; $i < $circle_num; $i++) {//一圈一圈的来
 
     //用于每一圈判断第一行
     for ($j = $i; $j < $input_num - $i; $j++) {
         $matrix_arr[$i][$j] = $value++;
     }
-    if ($i == 1){
-        print_r($matrix_arr);
-    }
+
     //用于判断每圈的最后一列
     for ($j = $i + 1; $j < $input_num  - $i - 1 ; $j++){
         $matrix_arr[$j][$input_num -$i -1] = $value++;
-    }
-
-    if ($i == 1){
-        print_r($matrix_arr);
     }
 
     //用于判断每圈的最后一行
@@ -40,18 +34,11 @@ for ($i = 1; $i <= $circle_num; $i++) {//一圈一圈的来
         $matrix_arr[$input_num - $i -1][$j] = $value++;
     }
 
-    if ($i == 1){
-        print_r($matrix_arr);
-    }
-
     //用于判断每圈的第一列
     for($j = $input_num - $i -1 ; $j > $i; $j--){
         $matrix_arr[$j][$i] = $value++;
     }
 
-    if ($i == 1){
-        print_r($matrix_arr);
-    }
 
 }
 
